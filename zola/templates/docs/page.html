@@ -19,8 +19,10 @@
       <main class="docs-content col-lg-11 col-xl-9">
         <h1>{{ page.title | safe }}</h1>
         {% if page.extra.lead %}<p class="lead">{{ page.extra.lead | safe }}</p>{% endif %}
-        <!--{{ page.content | safe }}-->
-        {{ macros_docs_mermaid::docs_mermaid(page=page) }}
+        {{ page.content | safe }}
+        <!-- mermaid need to use Zola shortcode-->
+        <!-- https://www.getzola.org/documentation/content/shortcodes/ -->
+        <!--{{ macros_docs_mermaid::docs_mermaid(page=page) }}-->
         {% if config.extra.edit_page %}
           {{ macros_edit_page::docs_edit_page(current_path=current_path) }}
         {% endif %}
